@@ -98,6 +98,7 @@ print('SVM:', np.mean(acc))
 ```
 
 结果展示：
+
 ![image](https://user-images.githubusercontent.com/116483698/218408805-8ac25fa9-5370-4a0f-9849-0133f56ff7ba.png)
 
 
