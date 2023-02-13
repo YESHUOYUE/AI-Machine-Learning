@@ -24,7 +24,7 @@ y = data['Class']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
 ```
 
-# 用matplotlib展示数据
+# 可视化数据
 ```python
 import seaborn as sns
 
