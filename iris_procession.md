@@ -1,31 +1,44 @@
+[TOC]()
+
+# 导入库
 ```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
+```
 
-# 导入数据
+# 导入csv数据（鸢尾花数集）
+```python
 data = pd.read_csv("iris.csv")
 data.columns = ["SepalLength", "SepalWidth", "PetalLength", "PetalWidth", "Class"]
 data = data.dropna()
-# print(data)
+print(data)
+```
 
 # 数据划分
+```python
 X = data.drop(columns=['Class'])
 y = data['Class']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
+```
 
 # 用matplotlib展示数据
+```python
 plt.figure(figsize=(10, 10))
 for column_index, column in enumerate(data.columns):
     if column == 'Class':
         continue
     plt.subplot(2, 2, column_index + 1)
     sns.violinplot(x='Class', y=column, data=data)
-# plt.show()
+plt.show()
+```
 
-# 决策树
+# DecisionTree（决策树）
+```python
+
+# 导入库
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 
@@ -43,5 +56,6 @@ from sklearn.model_selection import cross_val_score
 cv_scores = cross_val_score(model, X, y, cv=10)
 print("Decision Tree(cross):", np.mean(cv_scores))
 ```
-结果展示
+结果展示：
+
 ![image](https://user-images.githubusercontent.com/116483698/218399257-9db3aedc-a7f1-4601-a8a3-c2e22903199d.png)
