@@ -1,4 +1,4 @@
-[TOC]()
+
 
 # 导入库
 ```python
@@ -34,8 +34,13 @@ for column_index, column in enumerate(data.columns):
     sns.violinplot(x='Class', y=column, data=data)
 plt.show()
 ```
+展示图片如下：
+![image](https://user-images.githubusercontent.com/116483698/218401455-cb9c6b89-b6dd-40fd-bafb-5d2d72bd082c.png)
 
-# DecisionTree（决策树）
+
+
+# 用不同算法处理鸢尾花数集
+## DecisionTree（决策树）
 ```python
 
 # 导入库
@@ -49,9 +54,10 @@ model.fit(X_train, y_train)
 # 预测
 predictions = model.predict(X_test)
 
-# 模型评估/交叉验证
+# 模型评估/交叉验证（结果更为准确）
 score = accuracy_score(y_test, predictions)
 print("Decision Tree:", score)
+
 from sklearn.model_selection import cross_val_score
 cv_scores = cross_val_score(model, X, y, cv=10)
 print("Decision Tree(cross):", np.mean(cv_scores))
@@ -59,3 +65,7 @@ print("Decision Tree(cross):", np.mean(cv_scores))
 结果展示：
 
 ![image](https://user-images.githubusercontent.com/116483698/218399257-9db3aedc-a7f1-4601-a8a3-c2e22903199d.png)
+
+## KNN算法
+
+
