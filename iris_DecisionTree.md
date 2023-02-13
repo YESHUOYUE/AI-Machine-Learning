@@ -1,3 +1,4 @@
+```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -41,3 +42,6 @@ print("Decision Tree:", score)
 from sklearn.model_selection import cross_val_score
 cv_scores = cross_val_score(model, X, y, cv=10)
 print("Decision Tree(cross):", np.mean(cv_scores))
+```
+结果展示
+![image](https://user-images.githubusercontent.com/116483698/218399257-9db3aedc-a7f1-4601-a8a3-c2e22903199d.png)
