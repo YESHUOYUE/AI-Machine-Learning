@@ -171,13 +171,14 @@ print('w0:', clf.intercept_)
 train_predict = clf.predict(X_train)
 test_predict = clf.predict(X_test)
 ##评估模型
-print('LogisticRegression(train)', accuracy_score(y_train, train_predict))
-print('LogisticRegression(test)', accuracy_score(y_test, test_predict))
+print('LogisticRegression(train):', accuracy_score(y_train, train_predict))
+print('LogisticRegression(test):', accuracy_score(y_test, test_predict))
 ```
 
 ### 结果展示：
 
-![image](https://user-images.githubusercontent.com/116483698/218415954-e347d728-4158-43f8-8f90-a3d8be744def.png)
+![image](https://user-images.githubusercontent.com/116483698/218416999-f443792d-4f25-45e9-a7ae-5cd6979d6566.png)
+
 ### 优缺点
 
 #### 优点
