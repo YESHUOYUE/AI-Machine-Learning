@@ -14,6 +14,9 @@ data = data.dropna()
 print(data)
 ```
 
+![image](https://user-images.githubusercontent.com/116483698/218412824-65779316-4e71-4d9c-b3b9-ad59dc57aa71.png)
+
+
 # 数据划分
 ```python
 X = data.drop(columns=['Class'])
