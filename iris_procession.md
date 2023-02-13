@@ -47,14 +47,12 @@ plt.show()
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 
-# 初始化
+# 初始化、训练、预测
 model = DecisionTreeClassifier()
-# 训练
 model.fit(X_train, y_train)
-# 预测
 predictions = model.predict(X_test)
 
-# 模型评估/交叉验证（结果更为准确）
+# 模型评估/交叉验证
 score = accuracy_score(y_test, predictions)
 print("Decision Tree:", score)
 
@@ -67,5 +65,21 @@ print("Decision Tree(cross):", np.mean(cv_scores))
 ![image](https://user-images.githubusercontent.com/116483698/218399257-9db3aedc-a7f1-4601-a8a3-c2e22903199d.png)
 
 ## KNN算法
+```python
+from sklearn.neighbors import KNeighborsClassifier
 
+# 训练阶段
+knn = KNeighborsClassifier(n_neighbors=5)  # 设置邻居数K
+knn.fit(X_train, y_train)
 
+# 测试评估模型
+prediction2 = knn.predict(X_test)
+score2 = accuracy_score(y_test, prediction2)
+print("KNN :", score2)
+cv_scores2 = cross_val_score(knn, X, y, cv=10)
+print("KNN(cross):", np.mean(cv_scores2))
+
+```
+结果展示：
+
+![image](https://user-images.githubusercontent.com/116483698/218405474-ec507de9-f02f-4499-b627-e9e5de0e9d45.png)
