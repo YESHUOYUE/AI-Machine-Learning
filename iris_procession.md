@@ -142,3 +142,33 @@ print('SVM:', np.mean(acc))
 （1）SVM算法对大规模训练样本难以实施
 （2）用SVM解决多分类问题存在困难
 （3）对缺失数据敏感，对参数和核函数的选择敏感
+
+## 回归算法
+```python
+from sklearn.linear_model import LogisticRegression
+clf = LogisticRegression(solver='lbfgs')
+clf.fit(X_train, y_train)
+# 查看其对应的w、w0
+print('w:', clf.coef_)
+print('w0:', clf.intercept_)
+# 预测
+train_predict = clf.predict(X_train)
+test_predict = clf.predict(X_test)
+##评估模型
+print('LogisticRegression(train)', accuracy_score(y_train, train_predict))
+print('LogisticRegression(test)', accuracy_score(y_test, test_predict))
+```
+
+### 结果展示：
+
+![image](https://user-images.githubusercontent.com/116483698/218415954-e347d728-4158-43f8-8f90-a3d8be744def.png)
+### 优缺点
+#### 优点
+（1）思想简单，实现容易。建模迅速，对于小数据量、简单的关系很有效；
+（2）是许多强大的非线性模型的基础。
+（3）线性回归模型十分容易理解，结果具有很好的可解释性，有利于决策分析。
+（4）蕴含机器学习中的很多重要思想。
+（5）能解决回归问题。
+#### 缺点
+（1）对于非线性数据或者数据特征间具有相关性多项式回归难以建模.
+（2）难以很好地表达高度复杂的数据。
