@@ -68,7 +68,7 @@ print("Decision Tree(cross):", np.mean(cv_scores))
 ```python
 from sklearn.neighbors import KNeighborsClassifier
 
-# 训练阶段
+# 训练
 knn = KNeighborsClassifier(n_neighbors=5)  # 设置邻居数K
 knn.fit(X_train, y_train)
 
@@ -83,3 +83,21 @@ print("KNN(cross):", np.mean(cv_scores2))
 结果展示：
 
 ![image](https://user-images.githubusercontent.com/116483698/218405474-ec507de9-f02f-4499-b627-e9e5de0e9d45.png)
+
+## SVM算法
+```python
+from sklearn import svm
+
+# 训练
+clf = svm.SVC(C=0.5, kernel='linear', decision_function_shape='ovr')
+clf.fit(X_train, y_train)
+
+# 测试评估模型
+acc = clf.predict(X_train) == y_train
+print('SVM:', np.mean(acc))
+```
+
+结果展示：
+![image](https://user-images.githubusercontent.com/116483698/218408805-8ac25fa9-5370-4a0f-9849-0133f56ff7ba.png)
+
+
